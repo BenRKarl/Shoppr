@@ -1,5 +1,6 @@
-// New way of requiring coffee script
-require('coffee-script/register')
-// bootstraps Gulp's main file
-require('./Gulpfile.coffee')
 
+// Points Gulpfile to Gulpfile.coffee so that we 
+// can use Coffee Script in the Gulpfile
+
+require('coffee-script/register')
+require('./Gulpfile.coffee')
