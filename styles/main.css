@@ -1,8 +1,16 @@
-.main-background {
-  background-color: #ffffff;
-  opacity: 0.5;
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+.header-font {
+  font-size: 18px;
+  font-family: 'Inconsolata';
 }
-body {
-  background-color: #ffffff;
-  opacity: 0.5;
+.nav-container {
+  display: inline-block;
+}
+.main-nav {
+  font-size: 18px;
+  font-family: 'Inconsolata';
+  background-color: #ccc9c9;
+  width: 100%;
+  max-width: 1200px;
+  height: 350px;
 }

@@ -1,10 +1,10 @@
-gulp       = require 'gulp'
-less       = require 'gulp-less'
-path       = require 'path'
-del        = require 'del'
-livereload = require 'gulp-livereload'
-react      = require 'gulp-react'
-browserSync= require 'browser-sync'
+gulp        = require 'gulp'
+less        = require 'gulp-less'
+path        = require 'path'
+del         = require 'del'
+livereload  = require 'gulp-livereload'
+react       = require 'gulp-react'
+browserSync = require 'browser-sync'
 
 gulp.task 'styles', ->
   gulp.src 'styles/*.less'
@@ -27,3 +27,4 @@ gulp.task 'default', ['browser-sync'], ->
   livereload.listen()
   gulp.watch 'styles/*.less', ['styles', browserSync.reload]
   gulp.watch 'templates/*.jsx', ['react', browserSync.reload]
+  gulp.watch 'index.html', [browserSync.reload]

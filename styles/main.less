@@ -1,10 +1,23 @@
-@grey: #ffffff;
+@nav-background: #4f6fb0;
 
-.main-background {
-  background-color: @grey;
-  opacity: 0.5
+@header-copy-color: #ccc9c9;
+@header-copy-font-size: 18px;
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+
+// MIXINS
+.header-font {
+  font-size: @header-copy-font-size;
+  font-family: 'Inconsolata';
 }
 
-body {
-  .main-background;
+.nav-container {
+  display: inline-block;
+}
+
+.main-nav {
+  .header-font;
+  background-color: @header-copy-color;
+  width: 100%;
+  max-width: 1200px;
+  height: 350px;
 }

@@ -1,7 +1,7 @@
-var Hello = React.createClass({displayName: "Hello",
+var Title = React.createClass({displayName: "Title",
     render: function() {
-        return React.createElement("div", null, "Hello ", this.props.name);
+        return React.createElement("div", null, this.props.title);
     }
 });
  
-React.render(React.createElement(Hello, {name: "World"}), document.getElementById('main-nav'));
+React.render(React.createElement(Title, {title: "Shoppr"}), document.getElementById('nav-container'));
