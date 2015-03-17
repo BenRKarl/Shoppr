@@ -1,23 +1,42 @@
-@nav-background: #4f6fb0;
-
-@header-copy-color: #ccc9c9;
-@header-copy-font-size: 18px;
+// CONFIG
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 
+
+// VARIABLES
+@nav-background: #4f6fb0;
+@header-copy-color: #ccc9c9;
+@header-copy-font-size: 42px;
+
+
 // MIXINS
-.header-font {
+.nav-header-font {
+  color: @header-copy-color;
   font-size: @header-copy-font-size;
   font-family: 'Inconsolata';
+  margin: 0;
 }
 
-.nav-container {
-  display: inline-block;
+
+// STYLES
+body {
+  margin: 0;
+}
+
+#nav-container {
+  top: 0;
+  width: 100%;
 }
 
 .main-nav {
-  .header-font;
-  background-color: @header-copy-color;
+  background-color: @nav-background;
   width: 100%;
   max-width: 1200px;
-  height: 350px;
+  height: 100px;
+  margin: 0 auto;
+  h1 {
+    .nav-header-font;
+    position: relative;
+    margin-left: 25px;
+    top: 25px;
+  }
 }

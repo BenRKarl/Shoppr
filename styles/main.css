@@ -1,16 +1,30 @@
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
-.header-font {
-  font-size: 18px;
+.nav-header-font {
+  color: #ccc9c9;
+  font-size: 42px;
   font-family: 'Inconsolata';
+  margin: 0;
 }
-.nav-container {
-  display: inline-block;
+body {
+  margin: 0;
+}
+#nav-container {
+  top: 0;
+  width: 100%;
 }
 .main-nav {
-  font-size: 18px;
-  font-family: 'Inconsolata';
-  background-color: #ccc9c9;
+  background-color: #4f6fb0;
   width: 100%;
   max-width: 1200px;
-  height: 350px;
+  height: 100px;
+  margin: 0 auto;
+}
+.main-nav h1 {
+  color: #ccc9c9;
+  font-size: 42px;
+  font-family: 'Inconsolata';
+  margin: 0;
+  position: relative;
+  margin-left: 25px;
+  top: 25px;
 }

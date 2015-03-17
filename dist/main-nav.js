@@ -1,6 +1,8 @@
 var Title = React.createClass({displayName: "Title",
     render: function() {
-        return React.createElement("div", null, this.props.title);
+        return  React.createElement("div", {className: "main-nav"}, 
+                  React.createElement("h1", null, this.props.title)
+                );
     }
 });
  
