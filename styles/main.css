@@ -1,3 +1,8 @@
+.main-background {
+  background-color: #ffffff;
+  opacity: 0.5;
+}
 body {
-  background-color: grey;
+  background-color: #ffffff;
+  opacity: 0.5;
 }
