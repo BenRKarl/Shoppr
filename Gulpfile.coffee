@@ -3,6 +3,7 @@ less       = require 'gulp-less'
 path       = require 'path'
 del        = require 'del'
 livereload = require 'gulp-livereload'
+react      = require 'gulp-react'
 
 gulp.task 'styles', ->
     gulp.src 'styles/*.less'
