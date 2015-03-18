@@ -1,0 +1,4 @@
+[
+  {"item": "Apple", "quantity": 3, "purchased": false},
+  {"item": "Batteries", "quantity": 1, "purchased": true}
+]

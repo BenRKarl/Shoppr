@@ -25,7 +25,7 @@ gulp.task 'browser-sync', ->
     server:
       baseDir: './'
 
-gulp.task 'default', ['browser-sync'], ->
+gulp.task 'default', ['react', 'styles', 'browser-sync'], ->
   livereload.listen()
   gulp.watch 'styles/*.less', ['styles', browserSync.reload]
   gulp.watch 'templates/*.coffee', ['react', browserSync.reload]
