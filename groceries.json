@@ -1,4 +1,5 @@
 [
   {"item": "Apple", "quantity": 3, "purchased": false},
-  {"item": "Batteries", "quantity": 1, "purchased": true}
+  {"item": "Batteries", "quantity": 1, "purchased": true},
+  {"item": "Jeans", "quantity": 100, "purchased": true}
 ]

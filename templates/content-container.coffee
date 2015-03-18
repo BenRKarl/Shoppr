@@ -28,7 +28,7 @@ GridContainer = React.createClass({
 MainTable = React.createClass({
   render: ->
     listNodes = @props.data.map( (list) ->
-      <TableRow item={list.item} quantity={list.quantity} purchase={list.purchased}></TableRow>
+      <TableRow item={list.item} quantity={list.quantity} purchased={list.purchased}></TableRow>
     )
     <table className="main-table">
       <tr className="table-head">

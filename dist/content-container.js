@@ -39,7 +39,7 @@ MainTable = React.createClass({
       return React.createElement(TableRow, {
         "item": list.item,
         "quantity": list.quantity,
-        "purchase": list.purchased
+        "purchased": list.purchased
       });
     });
     return React.createElement("table", {
