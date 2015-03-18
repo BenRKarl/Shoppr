@@ -14,14 +14,6 @@ gulp.task 'styles', ->
     .pipe gulp.dest 'styles/'
     .pipe livereload()
 
-# gulp.task 'react', ->
-#   gulp.src 'templates/*.coffee'
-#     .pipe coffeex 
-#       bare: true
-#       .on 'error', gutil.log
-#     .pipe gulp.dest 'dist'
-#     .pipe livereload()
-
 gulp.task 'react', ->
   gulp.src 'templates/*.coffee' 
   .pipe coffeex({bare: true}).on('error', gutil.log)

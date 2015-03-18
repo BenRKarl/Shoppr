@@ -28,10 +28,30 @@ body {
   margin-left: 25px;
   top: 25px;
 }
-.content-container {
+#content-container {
   background-color: #ccc9c9;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   height: 500px;
+  overflow: hidden;
+}
+#content-container .grid-container {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 25px;
+  text-align: center;
+}
+#content-container .grid-container h2 {
+  margin: 0;
+  color: #4f6fb0;
+}
+#content-container .grid-container table {
+  margin: 0 auto;
+  margin-top: 25px;
+}
+#content-container .grid-container table th,
+#content-container .grid-container table td {
+  padding: 10px;
+  border: 1px white solid;
 }

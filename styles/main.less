@@ -41,10 +41,29 @@ body {
   }
 }
 
-.content-container {
+#content-container {
   background-color: @header-copy-color;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   height: 500px;
+  overflow: hidden;
+  .grid-container {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 25px;
+    text-align: center;
+    h2 {
+      margin: 0;
+      color: @nav-background;
+    }
+    table {
+      margin: 0 auto;
+      margin-top: 25px;
+      th, td {
+        padding: 10px;
+        border: 1px white solid;
+      }
+    }
+  }
 }
