@@ -5,6 +5,8 @@ del         = require 'del'
 livereload  = require 'gulp-livereload'
 react       = require 'gulp-react'
 browserSync = require 'browser-sync'
+coffeex     = require 'gulp-coffee-react'
+gutil       = require 'gulp-util'
 
 gulp.task 'styles', ->
   gulp.src 'styles/*.less'
@@ -12,11 +14,19 @@ gulp.task 'styles', ->
     .pipe gulp.dest 'styles/'
     .pipe livereload()
 
+# gulp.task 'react', ->
+#   gulp.src 'templates/*.coffee'
+#     .pipe coffeex 
+#       bare: true
+#       .on 'error', gutil.log
+#     .pipe gulp.dest 'dist'
+#     .pipe livereload()
+
 gulp.task 'react', ->
-  gulp.src 'templates/*.jsx'
-    .pipe react()
-    .pipe gulp.dest 'dist'
-    .pipe livereload()
+  gulp.src 'templates/*.coffee' 
+  .pipe coffeex({bare: true}).on('error', gutil.log)
+  .pipe gulp.dest 'dist'
+  .pipe livereload()
 
 gulp.task 'browser-sync', ->
   browserSync
@@ -26,5 +36,5 @@ gulp.task 'browser-sync', ->
 gulp.task 'default', ['browser-sync'], ->
   livereload.listen()
   gulp.watch 'styles/*.less', ['styles', browserSync.reload]
-  gulp.watch 'templates/*.jsx', ['react', browserSync.reload]
+  gulp.watch 'templates/*.coffee', ['react', browserSync.reload]
   gulp.watch 'index.html', [browserSync.reload]

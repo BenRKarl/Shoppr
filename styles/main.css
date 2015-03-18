@@ -28,3 +28,10 @@ body {
   margin-left: 25px;
   top: 25px;
 }
+.content-container {
+  background-color: #ccc9c9;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 500px;
+}
