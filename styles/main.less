@@ -5,7 +5,7 @@
 // VARIABLES
 @nav-background: #4f6fb0;
 @header-copy-color: #ccc9c9;
-@header-copy-font-size: 42px;
+@header-copy-font-size: 44px;
 
 
 // MIXINS
@@ -33,6 +33,7 @@ body {
   max-width: 1200px;
   height: 100px;
   margin: 0 auto;
+  
   h1 {
     .nav-header-font;
     position: relative;
@@ -42,24 +43,25 @@ body {
 }
 
 #content-container {
-  background-color: @header-copy-color;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 500px;
   overflow: hidden;
+  
   .grid-container {
-    width: 600px;
+    background-color: @header-copy-color;
+    width: 400px;
     margin: 0 auto;
     margin-top: 25px;
     text-align: center;
+    padding: 25px;
+    
     h2 {
       margin: 0;
       color: @nav-background;
     }
+    
     table {
       margin: 0 auto;
       margin-top: 25px;
+      
       th, td {
         padding: 10px;
         border: 1px white solid;

@@ -1,11 +1,14 @@
-var GridContainer, MainTable, TableRow;
+var GridContainer, ListForm, MainTable, TableRow;
 
 GridContainer = React.createClass({
   render: function() {
     return React.createElement("div", {
       "className": "grid-container"
     }, React.createElement("h2", null, this.props.title), React.createElement(MainTable, {
-      "data": this.state.data
+      "data": this.state.data,
+      "onListSubmit": this.handleListSubmit
+    }), React.createElement(ListForm, {
+      "onListSubmit": this.handleListSubmit
     }));
   },
   getInitialState: function() {
@@ -14,7 +17,8 @@ GridContainer = React.createClass({
     };
   },
   componentDidMount: function() {
-    return this.loadGroceryData();
+    this.loadGroceryData();
+    return setInterval(this.loadGroceryData, 2000);
   },
   loadGroceryData: function() {
     return $.ajax({
@@ -27,6 +31,20 @@ GridContainer = React.createClass({
       }).bind(this),
       error: (function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
+      }).bind(this)
+    });
+  },
+  handleListSubmit: function(data) {
+    return $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      type: 'POST',
+      data: data,
+      success: (function(data) {
+        this.setState(data);
+      }).bind(this),
+      error: (function(xhr, status, err) {
+        return console.error(this.props.url, status, err.toString());
       }).bind(this)
     });
   }
@@ -54,7 +72,51 @@ TableRow = React.createClass({
   render: function() {
     return React.createElement("tr", {
       "className": "table-row"
-    }, React.createElement("td", null, this.props.item), React.createElement("td", null, this.props.quantity), React.createElement("td", null, (this.props.purchased ? 'Yep!' : 'Nope...')));
+    }, React.createElement("td", null, this.props.item), React.createElement("td", null, this.props.quantity), React.createElement("td", null, (this.props.purchased === false || this.props.purchased === 'false' ? 'Nope...' : 'Yep!')));
+  }
+});
+
+ListForm = React.createClass({
+  handleSubmit: function(e) {
+    var item, purchased, quantity;
+    e.preventDefault();
+    item = React.findDOMNode(this.refs.item).value.trim();
+    quantity = React.findDOMNode(this.refs.quantity).value.trim();
+    purchased = React.findDOMNode(this.refs.purchased).checked;
+    if (!item || !quantity) {
+
+    } else {
+      this.props.onListSubmit({
+        item: item,
+        quantity: quantity,
+        purchased: purchased
+      });
+      React.findDOMNode(this.refs.item).value = '';
+      React.findDOMNode(this.refs.quantity).value = '';
+      React.findDOMNode(this.refs.item).placeholder = 'next item...';
+      React.findDOMNode(this.refs.quantity).placeholder = 'quantity...';
+      React.findDOMNode(this.refs.purchased).checked = false;
+    }
+  },
+  render: function() {
+    return React.createElement("form", {
+      "className": "list-form",
+      "onSubmit": this.handleSubmit
+    }, React.createElement("input", {
+      "type": "text",
+      "placeholder": "Item...",
+      "ref": "item"
+    }), React.createElement("input", {
+      "type": "text",
+      "placeholder": "How many?",
+      "ref": "quantity"
+    }), React.createElement("input", {
+      "type": "checkbox",
+      "ref": "purchased"
+    }), React.createElement("input", {
+      "type": "submit",
+      "value": "Save"
+    }));
   }
 });
 

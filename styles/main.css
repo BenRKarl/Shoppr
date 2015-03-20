@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
 .nav-header-font {
   color: #ccc9c9;
-  font-size: 42px;
+  font-size: 44px;
   font-family: 'Inconsolata';
   margin: 0;
 }
@@ -21,7 +21,7 @@ body {
 }
 .main-nav h1 {
   color: #ccc9c9;
-  font-size: 42px;
+  font-size: 44px;
   font-family: 'Inconsolata';
   margin: 0;
   position: relative;
@@ -29,18 +29,15 @@ body {
   top: 25px;
 }
 #content-container {
-  background-color: #ccc9c9;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 500px;
   overflow: hidden;
 }
 #content-container .grid-container {
-  width: 600px;
+  background-color: #ccc9c9;
+  width: 400px;
   margin: 0 auto;
   margin-top: 25px;
   text-align: center;
+  padding: 25px;
 }
 #content-container .grid-container h2 {
   margin: 0;
